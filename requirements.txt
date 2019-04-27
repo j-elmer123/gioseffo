@@ -1,0 +1,13 @@
+django[argon2]==2.2
+
+# database stuff
+psycopg2-binary==2.8.2
+
+# redis stuff
+redis==3.2.1
+django-redis==4.10.0
+
+# misc
+django-extensions==2.1.6
+ipython
+
