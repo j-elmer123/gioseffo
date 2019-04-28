@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'gioseffo.apps.users',
 ]
 
 MIDDLEWARE = [
@@ -112,12 +113,18 @@ PASSWORD_HASHERS = [
 ]
 
 
+# Custom User
+# https://docs.djangoproject.com/en/2.2/topics/auth/customizing/
+
+AUTH_USER_MODEL = 'users.User'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
