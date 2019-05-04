@@ -1,6 +1,8 @@
 from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 from django.db import models
 
+from model_utils import Choices
+
 
 class CustomUserManager(BaseUserManager):
     def create_user(self, username, full_name, password=None):
@@ -38,6 +40,12 @@ class User(AbstractBaseUser):
     birthday = models.DateField(null=True)
     email = models.CharField(unique=True, max_length=255, null=True, db_index=True)
     mobile_number = models.CharField(unique=True, max_length=255, null=True, db_index=True)
+    GENDER = Choices(
+        (0, 'blank', 'Prefer Not to Say'),
+        (1, 'male', 'Male'),
+        (2, 'female', 'Female')
+    )
+    gender = models.PositiveSmallIntegerField(choices=GENDER, default=GENDER.blank)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
 
