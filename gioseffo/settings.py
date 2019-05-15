@@ -167,6 +167,7 @@ SHELL_PLUS = "ipython"
 # misc
 
 INTERNAL_IPS = []
+CUSTOM_KWARGS = {}
 
 # use settings_local
 
