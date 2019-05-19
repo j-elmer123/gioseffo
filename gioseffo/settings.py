@@ -39,8 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'mptt',
-    'gioseffo.apps.users',
-    'gioseffo.apps.churches'
+    'gioseffo.apps.churches',
+    'gioseffo.apps.titles',
+    'gioseffo.apps.users'
 ]
 
 MIDDLEWARE = [
