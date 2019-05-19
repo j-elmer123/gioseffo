@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'mptt',
     'gioseffo.apps.churches',
-    'gioseffo.apps.titles',
+    'gioseffo.apps.positions',
     'gioseffo.apps.users'
 ]
 
