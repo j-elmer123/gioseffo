@@ -17,4 +17,5 @@ class Position(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='position_updates', on_delete=models.CASCADE)
     deleted_at = models.DateTimeField(blank=True, null=True)
-    deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='position_deletions', on_delete=models.CASCADE)
+    deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='position_deletions', on_delete=models.CASCADE,
+                                   blank=True, null=True)
