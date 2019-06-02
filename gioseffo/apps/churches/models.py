@@ -20,7 +20,11 @@ class Church(MPTTModel):
     updated_at = models.DateTimeField(auto_now=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_updates', on_delete=models.CASCADE)
     deleted_at = models.DateTimeField(blank=True, null=True)
-    deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_deletions', on_delete=models.CASCADE)
+    deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_deletions', on_delete=models.CASCADE,
+                                   blank=True, null=True)
+
+    def __str__(self):
+        return self.name
 
 
 class ChurchMembership(models.Model):
@@ -38,4 +42,5 @@ class ChurchMembership(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     updated_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_membership_updates', on_delete=models.CASCADE)
     deleted_at = models.DateTimeField(blank=True, null=True)
-    deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_membership_deletions', on_delete=models.CASCADE)
+    deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_membership_deletions', on_delete=models.CASCADE,
+                                   blank=True, null=True)
