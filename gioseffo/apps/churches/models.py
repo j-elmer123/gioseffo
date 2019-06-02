@@ -23,6 +23,9 @@ class Church(MPTTModel):
     deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='church_deletions', on_delete=models.CASCADE,
                                    blank=True, null=True)
 
+    def __str__(self):
+        return self.name
+
 
 class ChurchMembership(models.Model):
     church = models.ForeignKey('Church', related_name='members', on_delete=models.CASCADE)

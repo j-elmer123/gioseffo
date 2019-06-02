@@ -19,3 +19,6 @@ class Position(models.Model):
     deleted_at = models.DateTimeField(blank=True, null=True)
     deleted_by = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='position_deletions', on_delete=models.CASCADE,
                                    blank=True, null=True)
+
+    def __str__(self):
+        return self.name

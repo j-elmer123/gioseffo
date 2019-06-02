@@ -4,8 +4,10 @@ from gioseffo.apps.churches.models import Church, ChurchMembership
 
 @admin.register(Church)
 class ChurchAdmin(admin.ModelAdmin):
-    pass
+    raw_id_fields = ['created_by', 'updated_by', 'deleted_by']
+
 
 @admin.register(ChurchMembership)
-class ChurchMembership(admin.ModelAdmin):
-    pass
+class ChurchMembershipAdmin(admin.ModelAdmin):
+    raw_id_fields = ['created_by', 'updated_by', 'deleted_by']
+    list_display = ['church', 'member', 'position']
