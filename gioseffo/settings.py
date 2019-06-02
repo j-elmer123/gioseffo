@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'mptt',
     'gioseffo.apps.churches',
     'gioseffo.apps.positions',
-    'gioseffo.apps.users'
+    'gioseffo.apps.services',
+    'gioseffo.apps.users',
+    'mptt',
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from gioseffo.apps.churches.models import Church, ChurchMembership
+
+from .models import Church, ChurchMembership
 
 
 @admin.register(Church)

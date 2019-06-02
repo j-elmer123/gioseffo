@@ -1,8 +1,8 @@
 from django.contrib import admin
 
-from .models import Position
+from .models import Service
 
 
-@admin.register(Position)
-class PositionAdmin(admin.ModelAdmin):
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
     raw_id_fields = ['created_by', 'updated_by', 'deleted_by']
