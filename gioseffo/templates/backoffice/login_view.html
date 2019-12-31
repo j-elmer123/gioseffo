@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block body_class %}container-fluid{% endblock %}
+
+{% block content %}
+<div class="col-12 col-sm-10 col-md-5 col-lg-4 col-xl-3 h-100 mx-auto">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="card w-100">
+      <div class="card-body">
+        <form method="POST" action="{{ url('backoffice:login_view') }}">
+          {{ csrf_input }}
+          {% for field in form %}
+            <div class="form-group row">
+              <div class="col">
+                {{ field }}
+              </div>
+            </div>
+          {% endfor %}
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="btn btn-block btn-primary">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

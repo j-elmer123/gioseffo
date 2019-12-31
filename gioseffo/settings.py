@@ -25,7 +25,7 @@ SECRET_KEY = ')%%)jcu3g-b(886ozwd=d55px28ma+!0eulntlfty=ww1#h&yk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -73,9 +73,9 @@ TEMPLATES = [
     },
     {
         'BACKEND': 'django.template.backends.jinja2.Jinja2',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [os.path.join(BASE_DIR, "gioseffo/templates")],
         'OPTIONS': {
-            'environment': 'jinja2.Environment'
+            'environment': 'gioseffo.jinja2.environment'
         }
     },
 ]
@@ -148,6 +148,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.dirname(__file__) + '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static_files"),
+]
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+]
 
 
 # caches
