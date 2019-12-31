@@ -10,7 +10,7 @@ psycopg2-binary==2.8.4
 Jinja2
 
 # redis stuff
-redis==3.2.1
+redis==3.3.11
 django-redis==4.11.0
 
 # misc
