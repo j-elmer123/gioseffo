@@ -4,15 +4,25 @@ from django.shortcuts import render, redirect
 
 
 def login_view(request):
-    auth_form = AuthenticationForm(data=request.POST or None)
-    if auth_form.is_valid():
-        login(request, auth_form.get_user())
+    print(request.POST)
+    form = AuthenticationForm(data=request.POST or None)
+
+    form.fields['username'].widget.attrs['class'] = "form-control"
+    form.fields['username'].widget.attrs['type'] = "text"
+    form.fields['username'].widget.attrs['placeholder'] = "Username"
+
+    form.fields['password'].widget.attrs['class'] = "form-control"
+    form.fields['password'].widget.attrs['type'] = "password"
+    form.fields['password'].widget.attrs['placeholder'] = "Password"
+
+    if form.is_valid():
+        login(request, form.get_user())
         return redirect('backoffice:index')
     else:
         invalid_data = request.method == 'POST'
 
     context_data = {
-        'form': auth_form,
+        'form': form,
         'invalid_data': invalid_data,
         'title': 'Login'
     }
