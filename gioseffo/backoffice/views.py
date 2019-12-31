@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect
 
 
 def login_view(request):
-    print(request.POST)
     form = AuthenticationForm(data=request.POST or None)
 
     form.fields['username'].widget.attrs['class'] = "form-control"
