@@ -22,7 +22,7 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(
-    'admin/password_reset/',
+        'admin/password_reset/',
         auth_views.PasswordResetView.as_view(),
         name='admin_password_reset',
     ),
@@ -41,6 +41,7 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(),
         name='password_reset_complete',
     ),
+    path('backoffice/', include('gioseffo.backoffice.urls'))
 ]
 
 if settings.DEBUG:
