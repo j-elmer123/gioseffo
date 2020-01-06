@@ -14,4 +14,4 @@ redis==3.3.11
 django-redis==4.11.0
 
 # misc
-ipython==7.11.0
+ipython==7.11.1
