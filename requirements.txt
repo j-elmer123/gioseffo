@@ -1,4 +1,4 @@
-django[argon2]==2.2.9
+django[argon2]==3.0.3
 django-extensions==2.2.6
 django-model-utils==4.0.0
 django-mptt==0.11.0
